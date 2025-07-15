@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UV-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaibhavi Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="left">
+        <img src="logo.png" alt="vaibhavi" class="logo" data-aos="fade-right">
+      </div>
+      <div class="right" data-aos="fade-left">Vaibhavi Portfolio</div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="first">
+      <div class="leftsection" data-aos="fade-right">
+        <h1>Hello, I'm <span>Vaibhavi</span></h1>
+        <h2><span class="highlight">Full</span> Stack <span class="highlight">Developer</span></h2>
+        <p>
+          I am a passionate Full Stack Developer with Html, css, javascript, react js, node js, MongoDB web
+          applications.
+          With hands-on experience in modern web technologies, I aim to deliver innovative solutions that
+          enhance user experience and drive growth.
+        </p>
+        <span id="element"></span>
+        <div class="buttons">
+          <button class="btn"><a href="resume_22CP009.jpg">Download Resume</a></button>
+        </div>
+      </div>
+
+      <div class="rightsection" data-aos="fade-left" data-aos-delay="500">
+        <img src="22CP009.png" alt="">
+      </div>
+
+    </section>
+
+
+    <section class="secondsec" id="experience">
+      <h1 data-aos="fade-up">Work Experience</h1>
+      <div class="box">
+        <div class="vertical-hidden">
+          <img src="quiz.png" alt="" class="img-top">
+          <div class="vertical-title">HTML, CSS</div>
+          <div class="vertical-desc">
+            July 2024 15 days Internship. I made one simple and basic Quiz website.
+            I used HTML, CSS, JavaScript.
+          </div>
+        </div>
+
+        <div class="vertical hidden">
+          <img src="quiz.png" alt="" class="img-top">
+          <div class="vertical-title">React js</div>
+          <div class="vertical-desc">
+            July 2025 15 days Internship. I made one online shopping website using React.js for frontend
+            and Node.js for backend.
+          </div>
+        </div>
+
+        <div class="vertical hidden">
+          <img src="quiz.png" alt="" class="img-top">
+          <div class="vertical-title">Graphics Designer</div>
+          <div class="vertical-desc">
+            I worked as a Graphics Designer at CSI Student branch for 2 years. In 2nd year,
+            I was Head of Graphics Design.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Projectsec" id="projects">
+      <h1 data-aos="fade-up">Projects</h1>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+        <img src="voting.png" alt="Project 1" class="project-img">
+        <div class="project-info">
+          <h2>Online Voting System</h2>
+          <p>Designed a dynamic Online Voting platform </p>
+          <div class="tech-stack">
+            <span>React.js</span><span>Tailwind CSS</span><span>Dot net</span>
+            <span>MongoDB</span>
+          </div>
+          <a href="#" class="btn">Visit</a>
+          <a href="#" class="btn">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="habit.png" alt="Project 2" class="project-img">
+        <!-- <div class="project-info">
+          <h2>Habit Tracking</h2>
+          <p>Built a real-time chat platform using WebSockets for seamless messaging, file sharing, and group chats.</p>
+          <div class="tech-stack">
+            <span>React.js</span><span>Tailwind CSS</span><span>Shadcn</span><span>Node.js</span>
+            <span>Express</span><span>MongoDB</span><span>WebSockets</span>
+          </div>
+          <a href="#" class="btn">Visit</a>
+          <a href="#" class="btn">GitHub</a>
+        </div> -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer" data-aos="fade-up">
+      <div class="f-first">
+
+        <a href="https://github.com/Goturaut" target="_blank" class="github-link">GitHub
+        </a>
+      </div>
+      <div class="f-link">
+
+        <a href="https://www.linkedin.com/in/vaibhavi-raut-31049b26b" target="_blank" class="linkedin-link">LinkedIn
+        </a>
+
+
+      </div>
+      <div class="f-second">
+        <span>Contact: +91 8849689402</span>
+      </div>
+      <div class="f-third">
+        <span>Address: D.Valsad Pin.396050</span>
+      </div>
+      <div class="four">
+        <a href="mailto:vaibhaviraut031@gmail.com" class="email-link">
+  vaibhvairaut031@gmail.com
+</a>
+
+      </div>
+    </div>
+    <div class="f-text-center">
+      Copyright &#169; Portfolio | All rights reserved
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,     // Animation duration in ms
+      once: false,        // Allow animations every time on scroll
+      delay: 0,           // Default delay (can be overridden individually)
+    });
+
+
+
+    // Intersection Observer for Work Experience .vertical items (staggered)
+    const verticalObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const verticals = document.querySelectorAll('.vertical');
+          verticals.forEach((el, index) => {
+            setTimeout(() => {
+              el.classList.add('visible');
+            }, index * 300);
+          });
+        } else {
+          // Optional: Remove visibility when out of view to re-trigger
+          const verticals = document.querySelectorAll('.vertical');
+          verticals.forEach(el => el.classList.remove('visible'));
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    const workSection = document.querySelector('.secondsec .box');
+    if (workSection) {
+      verticalObserver.observe(workSection);
+    }
+  </script>
+
+</body>
+
+</html>
